@@ -32,7 +32,7 @@ db.mongoose
   app.get("/lastlist", async (req, res) => {
   
     const userswin = await TopWins.find(
-      {win : { $gt: 30 }},{ userdata: 1,game:1,username:1,x:1,date:1,win:1 }
+      {x : { $gt: 5 }},{ userdata: 1,game:1,username:1,x:1,date:1,win:1 }
     )
 
       .limit(100).sort({date:-1});
